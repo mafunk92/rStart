@@ -1,34 +1,27 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>React Desktop | React UI Components for OS X El Capitan and Windows 10</title>
-  <meta name="description" content="React UI Components for OS X El Capitan and Windows 10">
+  <head>
+    <title>My First React Example</title>
+  </head>
+  <body>
+    <div id="greeting-div"></div>
 
-  <meta property="og:title" content="React Desktop | React UI Components for OS X El Capitan and Windows 10">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="http://reactdesktop.js.org/">
-  <meta property="og:image" content="http://reactdesktop.js.org/images/logo-og.png">
-  <meta property="og:description" content="React UI Components for OS X El Capitan and Windows 10">
+    <script src="https://fb.me/react-15.0.0.js"></script>
+    <script src="https://fb.me/react-dom-15.0.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <script type="text/babel">
+      var Greeting = React.createClass({
+        render: function() {
+          return (
+            <p>Hello, Universe</p>
+          )
+        }
+      });
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <script src="https://fb.me/react-15.0.0.js"></script>
-  <script src="https://fb.me/react-dom-15.0.0.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
-  <script type="text/babel">
-
-  <script>
-    if(/github\.io/.test(window.location.href)) {
-      window.location = "http://reactdesktop.js.org";
-    }
-  </script>
-</head>
-<body>
-<div id="header"></div>
-<div id="main"></div>
-<script src="/bundle.js"></script>
-</body>
+      ReactDOM.render(
+        <Greeting/>,
+        document.getElementById('greeting-div')
+      );
+    </script>
+  </body>
 </html>
