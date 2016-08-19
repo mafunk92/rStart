@@ -21538,8 +21538,8 @@
 	        value: function render() {
 	            return _react2.default.createElement(
 	                _windows.NavPane,
-	                { paneExpandedLength: 175, color: this.props.color, theme: this.props.theme },
-	                this.renderItem('Dashboard', _react2.default.createElement('div', { height: 2000 })),
+	                { paneExpandedLength: 175, color: this.props.color, theme: this.props.theme, defaultIsPaneExpanded: false },
+	                this.renderItem('Dashboard', 'Hello World'),
 	                this.renderItem('Entries', 'Content 30'),
 	                this.renderItem('Inventory', 'Content 30'),
 	                this.renderItem('Accounts', 'Content 20'),
@@ -21565,11 +21565,12 @@
 	                    onSelect: function onSelect() {
 	                        return _this2.setState({ selected: title });
 	                    },
-	                    padding: '10px 20px'
+	                    padding: '10px 20px',
+	                    push: true
 	                },
 	                _react2.default.createElement(
 	                    _windows.Text,
-	                    null,
+	                    { height: '2000px' },
 	                    content
 	                )
 	            );
