@@ -76,6 +76,8 @@
 
 	    var json_obj = JSON.parse(Httpreq.response);
 
+	    console.log(json_obj.toString());
+
 	    return json_obj.usd.symbol + json_obj.usd.last;
 	}
 
