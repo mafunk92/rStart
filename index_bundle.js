@@ -21540,9 +21540,10 @@
 	                _windows.NavPane,
 	                { paneExpandedLength: 175, color: this.props.color, theme: this.props.theme },
 	                this.renderItem('Dashboard', 'Content 10'),
+	                this.renderItem('Entries', 'Content 30'),
+	                this.renderItem('Inventory', 'Content 30'),
 	                this.renderItem('Accounts', 'Content 20'),
 	                this.renderItem('Statements', 'Content 30'),
-	                this.renderItem('Entries', 'Content 30'),
 	                this.renderItem('Ratios', 'Content 30'),
 	                this.renderItem('History', 'Content 30'),
 	                this.renderItem('Settings', 'Content 30')
@@ -21583,15 +21584,17 @@
 	                case 'Ratios':
 	                    return _react2.default.createElement('span', { className: 'fa fa-bar-chart fa-fw' });
 	                case 'Accounts':
-	                    return _react2.default.createElement('span', { className: 'fa fa-book fa-fw' });
+	                    return _react2.default.createElement('span', { className: 'fa fa-university fa-fw' });
 	                case 'History':
 	                    return _react2.default.createElement('span', { className: 'fa fa-history fa-fw' });
 	                case 'Entries':
-	                    return _react2.default.createElement('span', { className: 'fa fa-bars fa-fw' });
+	                    return _react2.default.createElement('span', { className: 'fa fa-book fa-fw' });
 	                case 'Statements':
 	                    return _react2.default.createElement('span', { className: 'fa fa-file fa-fw' });
 	                case 'Settings':
 	                    return _react2.default.createElement('span', { className: 'fa fa-cog fa-fw' });
+	                case 'Inventory':
+	                    return _react2.default.createElement('span', { className: 'fa fa-cubes fa-fw' });
 	            }
 	        }
 	    }]);
