@@ -65,21 +65,11 @@
 
 	var _Navpane2 = _interopRequireDefault(_Navpane);
 
+	var _Titlebar = __webpack_require__(292);
+
+	var _Titlebar2 = _interopRequireDefault(_Titlebar);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function getBtc() {
-	    var url = 'http://cors.io/?u=https://blockchain.info/ticker';
-
-	    var Httpreq = new XMLHttpRequest(); // a new request
-	    Httpreq.open("GET", url, true);
-	    Httpreq.send(null);
-
-	    var json_obj = JSON.parse(Httpreq.response);
-
-	    console.log(json_obj);
-
-	    return json_obj.USD.symbol + json_obj.USD.last;
-	}
 
 	var App = _react2.default.createClass({
 	    displayName: 'App',
@@ -89,11 +79,7 @@
 	        return _react2.default.createElement(
 	            'div',
 	            null,
-	            _react2.default.createElement(
-	                'p',
-	                null,
-	                getBtc()
-	            ),
+	            _react2.default.createElement(_Titlebar2.default, null),
 	            _react2.default.createElement(_Navpane2.default, null)
 	        );
 	    }
@@ -21533,13 +21519,13 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Playground = function (_Component) {
-	    _inherits(Playground, _Component);
+	var Nav = function (_Component) {
+	    _inherits(Nav, _Component);
 
-	    function Playground() {
-	        _classCallCheck(this, Playground);
+	    function Nav() {
+	        _classCallCheck(this, Nav);
 
-	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Playground).call(this));
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Nav).call(this));
 
 	        _this.state = {
 	            selected: 'Item 1'
@@ -21547,12 +21533,12 @@
 	        return _this;
 	    }
 
-	    _createClass(Playground, [{
+	    _createClass(Nav, [{
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
 	                _windows.NavPane,
-	                { paneExpandedLength: 175, color: this.props.color, theme: this.props.theme },
+	                { paneExpandedLength: 175, color: this.props.color, theme: this.props.theme, background: '#1d1d1d' },
 	                this.renderItem('Item 1', 'Content 10'),
 	                this.renderItem('Item 2', 'Content 20'),
 	                this.renderItem('Item 3', 'Content 30')
@@ -21568,7 +21554,7 @@
 	                {
 	                    title: title,
 	                    icon: this.renderIcon(title),
-	                    theme: 'light',
+	                    theme: 'dark',
 	                    background: '#ffffff',
 	                    selected: this.state.selected === title,
 	                    onSelect: function onSelect() {
@@ -21616,14 +21602,14 @@
 	        }
 	    }]);
 
-	    return Playground;
+	    return Nav;
 	}(_react.Component);
 
-	Playground.defaultProps = {
+	Nav.defaultProps = {
 	    color: '#29cc7f',
 	    theme: 'light'
 	};
-	exports.default = Playground;
+	exports.default = Nav;
 
 /***/ },
 /* 177 */
@@ -31153,6 +31139,69 @@
 	    display: 'flex'
 	  }
 	};
+
+/***/ },
+/* 292 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _windows = __webpack_require__(177);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Title = function (_Component) {
+	    _inherits(Title, _Component);
+
+	    function Title(props) {
+	        _classCallCheck(this, Title);
+
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Title).call(this, props));
+
+	        _this.toggleMaximize = function () {
+	            return _this.setState({ isMaximized: !_this.state.isMaximized });
+	        };
+
+	        _this.state = { isMaximized: true };
+	        return _this;
+	    }
+
+	    _createClass(Title, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(_windows.TitleBar, {
+	                title: 'rStart',
+	                isMaximized: this.state.isMaximized,
+	                theme: this.props.theme,
+	                background: this.props.color
+	            });
+	        }
+	    }]);
+
+	    return Title;
+	}(_react.Component);
+
+	Title.defaultProps = {
+	    color: '#29cc7f',
+	    theme: 'dark'
+	};
+	exports.default = Title;
 
 /***/ }
 /******/ ]);
