@@ -76,9 +76,9 @@
 
 	    var json_obj = JSON.parse(Httpreq.response);
 
-	    console.log(json_obj.toString());
+	    console.log(json_obj);
 
-	    return json_obj.usd.symbol + json_obj.usd.last;
+	    return json_obj.USD.symbol + json_obj.USD.last;
 	}
 
 	var App = _react2.default.createClass({
