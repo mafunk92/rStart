@@ -67,8 +67,21 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	function getBtc() {
+	    var url = 'https://blockchain.info/ticker';
+
+	    var Httpreq = new XMLHttpRequest(); // a new request
+	    Httpreq.open("GET", url, true);
+	    Httpreq.send(null);
+
+	    var json_obj = JSON.parse(Httpreq.response);
+
+	    return json_obj.usd.symbol + json_obj.usd.last;
+	}
+
 	var App = _react2.default.createClass({
 	    displayName: 'App',
+
 
 	    render: function render() {
 	        return _react2.default.createElement(
@@ -77,7 +90,7 @@
 	            _react2.default.createElement(
 	                'p',
 	                null,
-	                'Hello World'
+	                getBtc()
 	            ),
 	            _react2.default.createElement(_Navpane2.default, null)
 	        );
