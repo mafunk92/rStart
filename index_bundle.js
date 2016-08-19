@@ -21539,7 +21539,7 @@
 	            return _react2.default.createElement(
 	                _windows.NavPane,
 	                { paneExpandedLength: 175, color: this.props.color, theme: this.props.theme },
-	                this.renderItem('Dashboard', 'Content 10'),
+	                this.renderItem('Dashboard', _react2.default.createElement('div', { height: 2000 })),
 	                this.renderItem('Entries', 'Content 30'),
 	                this.renderItem('Inventory', 'Content 30'),
 	                this.renderItem('Accounts', 'Content 20'),
@@ -31183,7 +31183,7 @@
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(_windows.TitleBar, {
-	                title: 'rStart',
+	                title: 'Accnt',
 	                isMaximized: this.state.isMaximized,
 	                theme: this.props.theme,
 	                background: this.props.color
