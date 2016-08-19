@@ -68,11 +68,10 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function getBtc() {
-	    var url = 'https://blockchain.info/ticker';
+	    var url = 'http://cors.io/?u=https://blockchain.info/ticker';
 
 	    var Httpreq = new XMLHttpRequest(); // a new request
 	    Httpreq.open("GET", url, true);
-	    Httpreq.setRequestHeader("dataType", "jsonp");
 	    Httpreq.send(null);
 
 	    var json_obj = JSON.parse(Httpreq.response);
